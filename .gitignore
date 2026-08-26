@@ -1,23 +1,23 @@
 HELP.md
 target/
+*.class
+*.jar
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+### Logs ###
+*.log
+
+### Environment ###
+.env
+*.pem
 
 ### NetBeans ###
 /nbproject/private/
@@ -28,6 +28,21 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+### SO ###
+.DS_Store
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### Testcontainers ###
+testcontainers.properties
 
 ### VS Code ###
 .vscode/
