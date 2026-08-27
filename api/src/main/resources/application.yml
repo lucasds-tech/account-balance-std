@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: account-balance-std
+  datasource:
+    url: jdbc:postgresql://localhost:5432/accbalance_db
+    username: postgres
+    password: password
+    hikari:
+      maximum-pool-size: 10
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: false
+
+server:
+  port: 8080
+
+app:
+  timezone: America/Sao_Paulo
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v1/api-docs
