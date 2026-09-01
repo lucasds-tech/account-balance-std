@@ -4,15 +4,17 @@ WORKDIR /app
 
 # ----- Copy POMs reaproveitando cache de camadas do Docker -----
 COPY pom.xml .
+COPY api/pom.xml api/pom.xml
 COPY db-migration/pom.xml db-migrations/pom.xml
 COPY db-migrations/src db-migrations/src
-COPY api/pom.xml api/pom.xml
+COPY ingestor/pom.xml ingestor/pom.xml
 
 # ----- Baixa dependências antes de copiar o código-fonte (cache) -----
 RUN mvn -B -pl api -am dependency:go-offline -q || true
 
 # ----- Copia o código-fonte e compila -----
 COPY api/src api/src
+COPY ingestor/src ingestor/src
 RUN mvn -B -pl api -am package -DskipTests
 
 # ---- S2: runtime ----
