@@ -13,7 +13,7 @@ spring:
     hibernate:
       ddl-auto: validate
   flyway:
-    enabled: false
+    enabled: true
 
 server:
   port: 8080
