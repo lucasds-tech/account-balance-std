@@ -5,7 +5,7 @@ WORKDIR /app
 # ----- Copy POMs reaproveitando cache de camadas do Docker -----
 COPY pom.xml .
 COPY api/pom.xml api/pom.xml
-COPY db-migration/pom.xml db-migrations/pom.xml
+COPY db-migrations/pom.xml db-migrations/pom.xml
 COPY db-migrations/src db-migrations/src
 COPY ingestor/pom.xml ingestor/pom.xml
 
