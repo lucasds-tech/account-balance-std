@@ -74,3 +74,11 @@ resilience4j:
 logging:
   level:
     com.santander.ingestor: INFO
+
+aws:
+  sqs:
+    region: sa-east-1
+    endpoint: http://localhost:4566
+    queue-name: transacoes-financeiras-processadas
+    access-key: test
+    secret-key: test
