@@ -36,7 +36,7 @@ public class SqsQueue {
         } catch (QueueDoesNotExistException e) {
             log.info("Fila '{}' não existe — criando...", queueName);
             sqsClient.createQueue(r -> r.queueName(queueName));
-            return sqsClient.getQueueUrl(r ->
+            return sqsClient.getQueueUrl(r -> r.queueName(queueName)).queueUrl();
         }
     }
 }
