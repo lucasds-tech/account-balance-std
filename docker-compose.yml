@@ -66,3 +66,23 @@ services:
       timeout: 5s
       retries: 10
       start_period: 30s
+
+  localstack:
+    image: localstack/localstack:3.7.2
+    hostname: localstack
+    container_name: localstack
+    environment:
+      - AWS_DEFAULT_REGION=sa-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - SERVICES=sqs
+      - SKIP_SSL_CERT_DOWNLOAD=1
+      - DISABLE_EVENTS=1
+    ports:
+      - "4566:4566"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:4566/_localstack/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
