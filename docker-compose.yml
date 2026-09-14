@@ -53,6 +53,11 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/accbalance_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
+      AWS_SQS_ENDPOINT: http://localstack:4566
+      AWS_SQS_REGION: sa-east-1
+      AWS_SQS_ACCESS_KEY: test
+      AWS_SQS_SECRET_KEY: test
+      AWS_SQS_QUEUE_NAME: transacoes-financeiras-processadas
     ports:
       - "8082:8082"
     healthcheck:
