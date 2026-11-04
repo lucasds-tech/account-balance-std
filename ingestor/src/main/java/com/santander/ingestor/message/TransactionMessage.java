@@ -29,4 +29,7 @@ public record TransactionMessage(Transaction transaction, Account account) {
         }
     }
 
+    public boolean isApproved() {
+        return transaction != null && "APPROVED".equalsIgnoreCase(transaction.status());
+    }
 }
